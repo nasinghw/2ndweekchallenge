@@ -1,142 +1,200 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 :root {
-  --primary-color: #047aed;
-  --secondary-color: #1c3fa8;
-  --dark-color: #002240;
-  --light-color: #f4f4f4;
-  --success-color: #5cb85c;
-  --error-color: #d9534f;
+    --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
 }
 
 .container {
-   margin: 0 auto;
-   padding: 0 40px;
-   text-align: center;
-   text-decoration: underline;
-  }
-  .top-row {
-    grid-column: 1 / span 2; /* Spanning both columns */
-    grid-row: 1; /* First row */
-    background-image: url(/starter/images/bannertop.jpg); /* Replace with your banner picture */
-    background-size: cover;
-    background-position: center;
-    height: 200px; /* Adjust the height as needed */
-    color: white;
+    margin: 0 auto;
+    padding: 0 40px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-  }
-    
-  /* Text colors */
-    
-   
-  .flex {
+    text-decoration: underline;
+}
+
+
+/* Text colors */
+
+.text-light {
+    color: var(--light-color);
+}
+
+
+.flex {
     display: flex;
     justify-content: left;
     align-items: normal;
-    height:100%;
-  }
-     
- * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  color: #333;
-  line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 a {
-  text-decoration: none;
-  color: #333;
+    text-decoration: none;
+    color: #333;
 }
-h1,
-h2 {
+
+
+.grid-item:has(h2) {
     font-weight: 300;
     font-size: 1cm;
     line-height: 1.2;
     margin: 10px 0;
     border-right: 2px solid #000;
     padding-bottom: 20%;
-    padding-right: 10%;  
+    padding-right: 10%;
 }
 
 
 p {
-  margin: 10px 0;
+    margin: 10px 0;
+
 }
 
 img {
-  width: 100%;
+    width: 100%;
 }
 
 /* Navbar */
 .navbar {
-  background-color: var(--primary-color);
-  color: #fff;
-  height: 70px;
-  list-style: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px;
+    list-style: none;
 }
 
 
 .navbar ul li {
-  display: flex;
-  float: left;
+    display: flex;
+    float: left;
 }
 
 .navbar a {
-  color: #fff;
-  padding: 10px;
-  margin: 0 5px;
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
 }
 
-.navbar ul li a:hover, #navbar ul li a.current {
-  border-bottom: 2px #fff solid;
-  background: #eeeff0;
-  transition: 4s;
+.navbar ul li a:hover,
+#navbar ul li a.current {
+    border-bottom: 2px #fff solid;
+    background: #eeeff0;
+    transition: 4s;
 }
 
 .navbar .flex {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 /* Grid container styles */
 .grid-container {
     display: grid;
-    grid-template-columns: 15% 85%; /* Two columns */
-    grid-gap: 0px; /* Gap between grid items */
+    grid-template-columns: 15% 85%;
+    /* Two columns */
+    grid-gap: 0px;
+    /* Gap between grid items */
     padding: 0px;
-  }
-
-.backgroud1 {
-display: flex;
+    height: 100vh;
 }
-  
-  /* Grid item styles */
-  .grid-item {
+
+.work-section-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(4, 1fr);
+    height: 50vh;
+    grid-template-areas:
+        "project1 project1"
+        "project1 project1"
+        "project2 project3"
+        "project4 project5";
+}
+
+.project1 {
+    grid-area: project1;
+    background-color: red;
+}
+.project2 {
+    grid-area: project2;
+    background-color: blue;
+}
+.project3 {
+    grid-area: project3;
+    background-color: green;
+}
+.project4 {
+    grid-area: project4;
+
+}
+.project5 {
+    grid-area: project5;
+}
+.backgroud1 {
+    display: flex;
+}
+
+/* Grid item styles */
+.grid-item {
     background-color: #f2f2f2;
     padding: 20px;
-    text-align:right;
-    
-  }
-  .grid-item1, .grid-item2 {
+    text-align: right;
+
+}
+
+.grid-item1,
+.grid-item2 {
     float: left;
     background-color: #333;
     background-size: cover;
     height: 50px;
     width: max-content;
-  }
- 
-  
+}
 
-  
+.top-row {
+    grid-column: 1 / span 2;
+    /* Spanning both columns */
+    grid-row: 1;
+    /* First row */
+    background-image: url('../images/bannertop.jpg');
+    /* Replace with your banner picture */
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    /* Adjust the height as needed */
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
